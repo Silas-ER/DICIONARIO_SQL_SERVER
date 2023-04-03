@@ -1,0 +1,4 @@
+SELECT * from (SELECT Desc_produto_est, count(*) as total FROM
+tbProduto GROUP BY Desc_produto_est) tbProduto where total > 1 
+
+--faz um contador de itens repetidos e seleciona a partir dessa nova tabela temporaria itens que estejam com o contador maior que 1 
