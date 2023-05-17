@@ -14,3 +14,18 @@ WHERE
 	Cod_produto > '20000' and Cod_produto < '36000';
 
 select Cod_produto, Desc_produto_est, Desc_produto_nf, Desc_produto_rot from tbProduto where Cod_produto > '20000' and Cod_produto < '36000';
+
+
+--uma opção válida quando precisei diminuir a quantidade letras de uma coluna
+
+select Chave_fato, OBSERVACAO from tbEntradasObs where OBSERVACAO like 'BARCO:%';
+
+UPDATE tbEntradasObs 
+
+SET 
+	OBSERVACAO = SUBSTRING(OBSERVACAO,7,100)
+
+WHERE 
+	OBSERVACAO like 'BARCO:%';
+
+select Chave_fato, OBSERVACAO from tbEntradasObs where OBSERVACAO like 'BARCO:%';
